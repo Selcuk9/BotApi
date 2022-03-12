@@ -8,15 +8,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-    </ItemGroup>
-
-    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="11.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Telegram.Bot" Version="17.0.0" />
     </ItemGroup>
-
     <ItemGroup>
-      <Folder Include="Dto" />
+        <Protobuf Include="./Protos/crypto.proto" GrpcServices="Client" AdditionalImportDirs="./Protos/" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Binance.Crypto.v1";
+
+service CryptoService  {
+  rpc GetCryptoCurrency(CryptoCurrencyDtoRequest) returns (CryptoCurrencyDtoResponse);
+}
+
+message CryptoCurrencyDtoRequest {
+  string cryptoFrom = 1;
+  string cryptoTo = 2;
+}
+
+message CryptoCurrencyDtoResponse {
+  double price = 2;
+  string symbol = 3;
+}
